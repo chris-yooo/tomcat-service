@@ -44,7 +44,7 @@ WantedBy=multi-user.target
 
 `sudo systemctl daemon-reload`
 
-`sudo enable tomcat`
+`sudo systemctl enable tomcat`
 
 ### nun startet tomcat schon bei neustart der Maschine und lässt sich mit folgenden befehlen starten/stoppen etc...
 
