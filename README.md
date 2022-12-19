@@ -3,6 +3,10 @@
 Mit der anleitung von @bartfastiel https://github.com/bartfastiel/spring-boot-tomcat-deployment tomcat 
 soweit einrichten bis zu dem punkt an dem tomcat mit der /bin/startup.sh gestartet wird.
 
+oder
+
+https://github.com/chris-yooo/tomcat-deployment
+
 ### dann folgendes:
 
 `tomcat.service` in `/home/ec2-user` anlegen
