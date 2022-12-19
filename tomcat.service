@@ -1,0 +1,26 @@
+[Unit]
+Description=Apache Tomcat Web Application Container
+After=syslog.target network.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/opt/webserver/apache-tomcat-9.0.70/bin
+ExecStart=/opt/webserver/apache-tomcat-9.0.70/bin/startup.sh
+ExecStop=/opt/webserver/apache-tomcat-9.0.70/bin/shutdown.sh
+Type=forking
+UMask=0007
+RestartSec=10
+Restart=always
+
+Environment=CATALINA_BASE=/opt/webserver/apache-tomcat-9.0.70
+Environment=CATALINA_HOME=/opt/webserver/apache-tomcat-9.0.70
+Environment=CATALINA_TMPDIR=/opt/webserver/apache-tomcat-9.0.70/temp
+Environment=JRE_HOME=/opt/webserver/jdk-19
+Environment=JAVA_HOME=/opt/webserver/jdk-19
+Environment=CLASSPATH=/opt/webserver/apache-tomcat-9.0.70/bin/bootstrap.jar:/opt/webserver/apache-tomcat-9.0.70/bin/tomcat-juli.jar
+Environment=CATALINA_OPTS=
+Environment=CATALINA_PID=/opt/webserver/apache-tomcat-9.0.70/temp/tomcat.pid
+
+[Install]
+WantedBy=multi-user.target
